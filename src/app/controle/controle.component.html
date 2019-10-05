@@ -1,0 +1,60 @@
+<main>
+
+		<div class="titulo">
+			<h1>Controle</h1>
+		</div>
+	
+		<br>
+		<br>
+		<br>
+	
+		<div class="row">
+			<form  class="formulario controle">
+	
+				<h4>Informe o valor à ser computado</h4>
+	
+				<input type="text" name="idAlteracao" [(ngModel)]="idAlteracao" class="invisivel">
+				
+				<input type="text" placeholder="Origem" class="form-control" name="origemDeposito" [(ngModel)]="origemDeposito">
+				<div class="erro" *ngIf="erroOrigem == true"><p>Informe uma origem</p></div>
+				
+				<input type="text" placeholder="Valor" class="form-control" name="valorDeposito" [(ngModel)]="valorDeposito">
+				<div class="erro" *ngIf="erroValor == true"><p>Informe um valor válido</p></div>
+				
+				<input type="submit" value="Creditar" class="btn btn-success controleSubmit" (click)="creditar()" *ngIf="alteracao == false">
+				
+				<input type="button" value="Debitar" class="btn btn-dark controleButton" (click)="debitar()" *ngIf="alteracao == false">
+				
+				<input type="submit" value="Creditar" class="btn btn-success controleSubmit" (click)="alterarCredito()" *ngIf="alteracao == true">
+				
+				<input type="button" value="Debitar" class="btn btn-dark controleButton" (click)="alterarDebito()" *ngIf="alteracao == true">
+				
+				<input type="button" value="Cancelar" class="btn btn-info controleButton" id="cancelarAltDep"(click)="cancelar()" *ngIf="alteracao == true">
+			
+			</form>
+		</div>
+		<br>
+		<br>
+	
+		<div class="container">
+	
+			<div class="row">
+	
+				<section class="col" *ngFor="let deposito of depositos">
+					<div class="listaDep">
+						<h3>{{ deposito.origem }}</h3>
+						<h1>R$ {{ deposito.valor }}</h1>
+						<p>{{ deposito.data }}</p>
+						<button class="btn btn-warning" (click)="alterar(deposito.codigo, deposito.valor, deposito.origem)">Alterar</button>
+						<button class="btn btn-danger" (click)="excluir(deposito.codigo)">Excluir</button>
+					</div>
+				</section>
+	
+			</div>
+	
+		</div>
+	
+	
+	
+		
+	</main>

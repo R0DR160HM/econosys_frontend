@@ -1,0 +1,71 @@
+<main>
+<div class="titulo">
+<h1>Cadastre-se</h1>
+</div>
+
+<div class="boxCONTA">
+<form class="formulario-Conta">
+
+<a routerLink="/login">Já possui uma conta? Logue-se</a>
+
+<input type="text" placeholder="Nome" id="nome" class="form-control" name="nomeUsuario" [(ngModel)]="nomeUsuario" (keypress)="tamanhoNome()">
+   <div class="erro" *ngIf="nomeValida == true"><p>Nome é obrigatório</p></div>
+
+
+<input type="email" placeholder="E-mail" id="email" class="form-control" name="emailUsuario" [(ngModel)]="emailUsuario" (keyup)="validarEmail()" (keypress)="tamanhoEmail()">
+   <div class="erro" *ngIf="emailValida"><p>E-mail inválido. O email deve conter '@' e '.'</p></div>
+   <div class="erro" *ngIf="emailValidaEmail"><p>O email já existe</p></div>
+
+<input type="password" placeholder="Senha" id="senha" class="form-control" name="senhaUsuario" [(ngModel)]="senhaUsuario" (keypress)="tamanhoSenha()">
+   <div class="erro" *ngIf="senhaValida"><p>Senha inválida. A senha deve conter números e letras e deve ter pelo menos 8 caracteres.</p></div>
+   
+
+<input type="password" placeholder="Confirme a senha" id="conSenha" class="form-control" name="conSenhaUsuario" [(ngModel)]="conSenhaUsuario">
+   <div class="erro" *ngIf="conSenhaValida"><p>As senhas não coincidem</p></div>
+   
+   
+<input type="text" placeholder="Número de Celular" id="tel" class="form-control" name="telUsuario" [(ngModel)]="telUsuario" (keypress)="telefone()">
+   <div class="erro" *ngIf="telValida"><p>Número de celular inválido</p></div>
+   
+   
+<input type="text" placeholder="Data de Nascimento" id="dataNascimento" class="form-control" name="dataNascUsuario" [(ngModel)]="dataNascUsuario" (keypress)="nascimento()">
+   <div class="erro" *ngIf="nascValida"><p>Data de Nascimento inválida</p></div>
+
+   <a href="" data-toggle="modal" data-target="#modalCadastro">Afirmo que li e aceito os Termos e Condições</a>
+
+<section>
+<input type="submit" value="Cadastrar" class="btn btn-info botao" (click)="cadastrar()" id="btnCadastrar">
+</section>
+
+</form>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog" aria-labelledby="modalCadastroCenterTitle" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered" role="document">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title" id="modalCadastroCenterTitle">Termos e Condições</h5>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+         </button>
+       </div>
+       <div class="modal-body">
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel rhoncus augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras placerat tortor augue, vitae congue lacus pretium quis. Cras dignissim tempus nunc volutpat ultrices. Nulla blandit, orci volutpat pharetra vulputate, nulla nunc tempor nulla, sit amet dignissim enim lorem eu sem. In euismod nibh id hendrerit faucibus. Etiam et mi a elit vehicula pellentesque.
+
+         Aliquam sit amet lorem eget ex sollicitudin venenatis. Nunc sodales tristique est id bibendum. Praesent vulputate et enim vitae condimentum. Nam sit amet aliquet mauris, sed pretium ipsum. Proin placerat turpis molestie nibh volutpat porta. Proin faucibus semper interdum. Donec aliquam accumsan elit in imperdiet. Nam vestibulum lorem ut ligula consequat, rhoncus ultrices augue cursus.
+         
+         Cras sit amet ornare lorem. Cras eu neque eget tellus pharetra condimentum. Curabitur aliquam rhoncus gravida. Nulla eget commodo felis, id lobortis augue. Etiam iaculis nisi quis nisi scelerisque, ac scelerisque nibh sagittis. Nunc eget auctor enim. Etiam hendrerit erat quis metus posuere maximus. Proin fermentum dui nec est tincidunt scelerisque. Vivamus ex tellus, volutpat congue velit luctus, vestibulum eleifend eros. Proin ultricies non nibh sit amet lacinia. Maecenas aliquam ligula quis fermentum sagittis. Nunc luctus sapien eget est accumsan, vitae volutpat diam porttitor. Etiam semper elit at risus aliquet imperdiet. Sed id ipsum sed est dignissim luctus. Integer cursus malesuada dui id consectetur. Phasellus rutrum convallis elementum.
+         
+         Sed vitae venenatis enim. Maecenas in purus nulla. Aliquam luctus lacinia magna, vitae mattis lectus maximus et. Vivamus lorem est, facilisis ac felis nec, gravida ornare nisi. Pellentesque nec odio vitae nisi fermentum tempor. Phasellus lobortis erat nec lorem scelerisque, ac hendrerit massa feugiat. Nunc mauris ligula, placerat ut tristique at, malesuada porta elit. Praesent interdum volutpat tortor, nec interdum eros. Praesent gravida est vitae lectus cursus, vitae lacinia orci dignissim.
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-dark" data-dismiss="modal">Ok.</button>
+         <button data-dismiss="modal" id="fecharModal"></button>
+       </div>
+     </div>
+   </div>
+ </div>
+
+</main>

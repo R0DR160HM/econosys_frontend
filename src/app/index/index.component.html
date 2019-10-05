@@ -1,0 +1,101 @@
+<div class="adminLogado" *ngIf="admin">
+        <p>Você está usando o usuário administrador</p>
+</div>
+
+<img src="../../assets/img/banner/Inicio.jpg" class="banner">
+
+
+<main> 
+        <div class="container">
+        <div class="row">
+        
+                <div class="col-md">
+                <div class="titulo">
+                <h1>Sobre nós</h1>
+                </div>
+                
+                <div>
+                <p>A eConosys é uma instituição financeira sem fins lucrativos. Visamos possibilitar e facilitar o acesso do cidadão ao mundo dos investimentos. Disponibilizamos modernas ferramentas de controle financeiro, o que garante uma maior segurança e privacidade do usuário, sem abrir mão da eficiência. Todos os serviços disponibilizados retornam informações em tempo real.</p>
+                <p>Vangloriamo-nos dos mais diversos elogios vindos de empresas em destaque nacional e internacional como: Microhard, Pineapple e Amazonic-Forest.</p>
+                <p>Temos como preocupação a segurança dos dados de nossos usuários, além de termos como meta principal, a educação financeira sólida e definitiva de nossos usuários.</p>
+                </div>
+            </div>
+                
+            <div class="col-md">
+
+                    <div class="toast fade show torrada" role="alert" aria-live="assertive" aria-atomic="true" *ngIf="sessaoExpirada">
+                            <div class="toast-header">
+                                <svg class="bd-placeholder-img rounded mr-2" width="20" height="20" focusable="false" role="img"><rect width="100%" height="100%" fill="#ba0000"></rect></svg>
+                                <strong class="mr-auto">Sessão expirada.</strong>
+                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                <span aria-hidden="true" (click)="fecharModalSessao()">×</span>
+                                </button>
+                            </div>
+                            <div class="toast-body">
+                                A sessão expirou.
+                            </div>
+                        </div>
+
+
+                    <div class="toast fade show torrada" role="alert" aria-live="assertive" aria-atomic="true" *ngIf="primeiraEntrada">
+                            <div class="toast-header">
+                                <svg class="bd-placeholder-img rounded mr-2" width="20" height="20" focusable="false" role="img"><rect width="100%" height="100%" fill="#52eb34"></rect></svg>
+                                <strong class="mr-auto">Bem-Vindo!</strong>
+                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                <span aria-hidden="true" (click)="fecharModalNovaConta()">×</span>
+                                </button>
+                            </div>
+                            <div class="toast-body">
+                                Cadastro efetuado com sucesso.
+                            </div>
+                        </div>
+                    <img src="../../assets/img/quemsomos.png" id="quems">
+                    </div>
+        
+                
+            </div>   
+                
+                <br>
+                
+                <br>
+                
+                <div class="row">
+                
+                <div class="col-sm">
+                        <div class="mvv">
+                <h1>Missão</h1>
+                
+
+                
+                <p>Gerar soluções adequadas, promovendo a educação financeira a todos os usuários, para que assim, consigam administrar seu dinheiro de forma correta.</p>
+                </div>
+            </div>
+                <br>
+                
+                <div class="col-sm">
+                    <div class="mvv">
+                <h1>Visão</h1>
+                
+                <p>Ser reconhecida como melhor Instituição Educacional Financeira local e futuramente, mundial.</p>
+            </div>
+            </div>   
+                <br>
+                
+                <div class="col-sm">
+                    <div class="mvv">
+                <h1>Valores</h1>
+                
+                <p>Inovação, Qualidade, Foco no Cliente, Agilidade, Compromisso com o Cliente, Segurança, Aprendizado, Organização, Disciplina, Eficiência.<p>
+
+            </div>
+            </div>
+                <br>
+                 
+            </div>
+            </div>
+
+
+          
+         
+
+</main>

@@ -1,0 +1,68 @@
+<main>
+
+
+    <div class="titulo">
+        <h1>Conta</h1>
+    </div>
+
+    <section id="dados">
+        
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <img src="../../assets/img/user.png">
+                    </div>
+                    <div class="col-lg">
+                        <form class="ficha">
+                                <input type="text"placeholder="{{ nome2 }}" class="form-control" name="nome" [(ngModel)]="nomeUsuario" id="nome2" (keypress)="tamanhoNome()">
+                                <div class="erro" *ngIf="nomeValida"><p>Nome obrigatório</p></div>
+                     
+                                <input type="email" placeholder="{{ email2 }}" class="form-control" name="email" (keyup)="validarEmail()" [(ngModel)]="emailUsuario"  id="email2" (keypress)="tamanhoEmail()">
+                                 <div class="erro" *ngIf="emailValida"><p>E-mail inválido. O email deve conter '@' e '.' e no maximo 40 caracteres</p></div>
+                                 <div class="erro" *ngIf="emailValidaEmail"><p>O email já existe</p></div>
+                     
+                                 <input type="password" placeholder="Nova senha" class="form-control" name="senha" [(ngModel)]="senhaUsuario" id="senha2" (keypress)="tamanhoSenha()">
+                                 <div class="erro" *ngIf="senhaValida"><p>Senha inválida. A senha deve conter números e letras e deve ter pelo menos 8 caracteres.</p></div>
+                     
+                                 <input type="password" placeholder="Repita a nova senha" class="form-control" name="senha2" [(ngModel)]="conSenhaUsuario" id="conSenha2">
+                                 <div class="erro" *ngIf="conSenhaValida"><p>As senhas não coincidem</p></div>
+                     
+                                 <input type="text" placeholder="{{ tel2 }}" name="telefone" class="form-control" [(ngModel)]="telUsuario" (keypress)="telefone()" id="tel2">
+                                 <div class="erro" *ngIf="telValida"><p>Número de celular inválido</p></div>
+                     
+                                 <input type="text" placeholder="{{ data2 }}" class="form-control" name="data" [(ngModel)]="dataNascUsuario" (keypress)="nascimento()" id="dataNascimento2">
+                                 <div class="erro" *ngIf="nascValida"><p>Data de Nascimento inválida</p></div>
+                        </form> 
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="submit" class="btn btn-dark botaoConta" value="Alterar" (click)="alterarConta()" >
+                    <input type="button" value="Excluir"  class="btn btn-danger botaoConta" data-toggle="modal" data-target="#modalExcluir">
+                </div>
+            </div>
+    </section>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="modalExcluir" tabindex="-1" role="dialog" aria-labelledby="modalExcluirCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalExcluirCenterTitle">Está certo disto?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+         Deseja mesmo excluir sua conta permanentemente (muito tempo)?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" (click)="excluirConta()">Sim, excluir</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Não, obrigado</button>
+          <button data-dismiss="modal" id="fecharModal"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</main>

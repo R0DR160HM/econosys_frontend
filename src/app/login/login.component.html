@@ -1,0 +1,27 @@
+<main>
+
+
+    <div class="titulo">
+    <h1>Login</h1>
+    </div>
+
+    <div class="boxCONTA">
+        <form class="formulario-Conta">
+
+            <a routerLink="/cadastro">Não possui conta? Crie agora</a>
+            
+            <input type="text" id="emailLogin" placeholder="E-mail" name="EmailLogin" class="form-control" (keyup)="validarEmail()" [(ngModel)]="emailUsuario">
+            <div class="erro" *ngIf="validaEmail"><p>E-mail não cadastrado.</p></div>
+            <div class="erro" *ngIf="emailInvalido"><p>E-mail inválido.</p></div>
+            
+            <input type="password" id="senhaLogin" placeholder="Senha" name="SenhaLogin" class="form-control" [(ngModel)]="senhaUsuario">
+            <div class="erro" *ngIf="validaSenha"><p>Senha incorreta. Tente novamente.</p></div>
+            
+            <input type="submit" class="btn btn-info botao" id="btnLogin" value="Entrar" (click)="logar()">
+        
+        </form>
+    </div>
+
+
+
+</main>

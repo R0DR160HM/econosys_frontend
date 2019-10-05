@@ -1,0 +1,93 @@
+<main>
+
+    <div class="titulo">
+        <h1>Investimento</h1>
+    </div>
+
+    <section>
+        <form class="formulario">
+
+            <input type="text" class="invisivel" name="tipo" [(ngModel)]="tipo">
+
+            <input type="text" placeholder="Valor Inicial" class="form-control" name="valorInicial" [(ngModel)]="valorInicial">
+            <div class="erro" *ngIf="erroValor"><p>Insira um valor válido.</p></div>    
+
+            <input type="text" placeholder="Origem do Investimento" class="form-control" name="origem" [(ngModel)]="origem">
+            <div class="erro" *ngIf="erroOrigem"><p>Insira a origem do investimento.</p></div>
+
+            <input type="text" placeholder="Taxa de Rendimento" class="form-control" name="taxa" [(ngModel)]="taxa">
+            <div class="erro" *ngIf="erroTaxa"><p>Insira a taxa válida de rendimento do investimento. Sinal de porcentagem dispensável.</p></div>
+
+            <input type="text" placeholder="Tipo do Investimento" class="form-control" disabled="true" name="tipoInvestimento" [(ngModel)]="tipoInvestimento">
+            <div class="erro" *ngIf="erroTipo"><p>Selecione um tipo de investimento.</p></div>
+
+            <div class="investimentos">
+                <div (click)="mensal()">
+                    <h4>A. M.</h4>
+                    <p>Rendimento ao Mês</p>
+                </div>
+                <div (click)="anual()">
+                    <h4>A. A.</h4>
+                    <p>Rendimento ao Ano</p>
+                </div>
+                <div (click)="final()">
+                    <h4>Final</h4>
+                    <p>Rendimento ao Término do Investimento</p>
+                </div>
+            </div>
+
+            <h5>Data de Retorno</h5>
+            <input type="date" placeholder="Data de Retorno" class="form-control" name="dataRetorno" [(ngModel)]="dataRetorno">
+            <div class="erro" *ngIf="erroData"><p>Insira uma data válida</p></div>
+
+            <input type="submit" value="Investir" class="btn btn-outline-success" id="investimentoBotao" (click)="investir()">
+
+        </form>
+    </section>
+
+
+        
+    <div class="toast fade show torrada" role="alert" aria-live="assertive" aria-atomic="true" *ngIf="erroFinal">
+        <div class="toast-header">
+            <svg class="bd-placeholder-img rounded mr-2" width="20" height="20" focusable="false" role="img"><rect width="100%" height="100%" fill="#ba0000"></rect></svg>
+            <strong class="mr-auto">Falha</strong>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true" (click)="fecharModal()">×</span>
+            </button>
+        </div>
+        <div class="toast-body">
+            Erro ao computar investimento: Valor excessivo.
+        </div>
+    </div>
+
+    <div class="toast fade show torrada" role="alert" aria-live="assertive" aria-atomic="true" *ngIf="erroObter">
+        <div class="toast-header">
+            <svg class="bd-placeholder-img rounded mr-2" width="20" height="20" focusable="false" role="img"><rect width="100%" height="100%" fill="#ba0000"></rect></svg>
+            <strong class="mr-auto">Falha</strong>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true" (click)="fecharModalData()">×</span>
+            </button>
+        </div>
+        <div class="toast-body">
+            Não é possível obter o montante no momento, a data final do investimento ainda não foi atingida.
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm" *ngFor="let investimento of investimentos">
+                <div class="invdiv">
+                    <h3>{{ investimento.nomeInvestimento }}</h3>
+                    <h1>R$ {{ investimento.valorFinal }}</h1>
+                    <p>{{ investimento.dataRetornoInvestimento }}</p>
+                    <button class="btn btn-success" id="obter" (click)="obter(investimento.idInvestimento, investimento.dataRetornoInvestimento, investimento.nomeInvestimento, investimento.valorFinal)">Obter Montante</button>
+                    <button class="btn btn-danger" (click)="excluir(investimento.idInvestimento)">Remover Investimento</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</main>

@@ -1,0 +1,172 @@
+<!--Created by- https://bootsnipp.com/ishwarkatwe-->
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="nav-side-menu" *ngIf="logado == true">
+    <div class="brand"><img src="../../assets/img/logo1.png" alt="Logo eConosys"></div>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+  
+        <div class="menu-list">
+  
+            <ul id="menu-content" class="menu-content collapse out">
+              
+                <li>
+                  <a routerLink="/">
+                    <div>
+                      <img src="../../assets/img/botoes/Home.png" alt="" class="botaoNav"> Home
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a routerLink="/conta">
+                    <div>
+                      <img src="../../assets/img/botoes/Usuario.png" alt="" class="botaoNav"> Minha Conta
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a routerLink="/servicos">
+                    <div>
+                      <img src="../../assets/img/botoes/Servicos.png" alt="" class="botaoNav"> Serviços
+                    </div>
+                  </a>
+                </li>
+                
+                <li>
+                  <a routerLink="/controle">
+                    <div>
+                      <img src="../../assets/img/botoes/Controle.png" alt="" class="botaoNav"> Controle
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a routerLink="/investimento">
+                    <div>
+                      <img src="../../assets/img/botoes/Investimentos.png" alt="" class="botaoNav"> Investimentos
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a routerLink="/estatisticas">
+                    <div>
+                      <img src="../../assets/img/botoes/Estatisticas.png" alt="" class="botaoNav"> Estatísticas
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a>
+                    <div (click)="sair()">
+                      <img src="../../assets/img/botoes/Logout.png" alt="" class="botaoNav"> Sair
+                    </div>
+                  </a>
+                </li>
+
+            </ul>
+     </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="nav-side-menu" *ngIf="logado == false">
+  <div class="brand"><img src="../../assets/img/logo1.png" alt="Logo eConosys"></div>
+  <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+      <div class="menu-list">
+
+          <ul id="menu-content" class="menu-content collapse out">
+            
+              <li>
+                <a routerLink="/">
+                  <div>
+                    <img src="../../assets/img/botoes/Home.png" alt="" class="botaoNav"> Início
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a routerLink="/cadastro">
+                  <div>
+                    <img src="../../assets/img/botoes/Cadastro.png" alt="" class="botaoNav"> Nova Conta
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a routerLink="/login">
+                  <div>
+                    <img src="../../assets/img/botoes/Login.png" alt="" class="botaoNav"> Login
+                  </div>
+                </a>
+              </li>
+              
+              <li>
+                <a routerLink="/servicos">
+                  <div>
+                    <img src="../../assets/img/botoes/Servicos.png" alt="" class="botaoNav"> Serviços
+                  </div>
+                </a>
+              </li>
+
+
+          </ul>
+   </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="nav-side-menu" *ngIf="admin">
+  <div class="brand"><img src="../../assets/img/logo1.png" alt="Logo eConosys"></div>
+  <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+      <div class="menu-list">
+
+          <ul id="menu-content" class="menu-content collapse out">
+            
+              <li>
+                <a routerLink="/">
+                  <div>
+                    <img src="../../assets/img/botoes/Home.png" alt="" class="botaoNav"> Home
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a routerLink="/admin">
+                  <div>
+                    <img src="../../assets/img/botoes/painel.png" alt="" class="botaoNav"> Painel
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a>
+                  <div (click)="sair()">
+                    <img src="../../assets/img/botoes/Logout.png" alt="" class="botaoNav"> Sair
+                  </div>
+                </a>
+              </li>
+
+          </ul>
+   </div>
+</div>
